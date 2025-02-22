@@ -9,7 +9,9 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         tex = pkgs.texlive.combine {
-          inherit (pkgs.texlive) scheme-minimal latex-bin latexmk;
+          inherit (pkgs.texlive)
+            scheme-basic
+            latexmk;
         };
       in
       rec {
