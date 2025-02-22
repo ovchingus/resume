@@ -7,8 +7,16 @@ PDF Resume builder written with tex.
 Build process requires `nix` and `nix-flakes` installed
 
 ```sh
-nix build
+# Run once to allow execute for build script
+chmod +x build.sh
+
+# Run to build
+./build.sh
 ```
+
+## Example
+
+![Resume](./vladimir_ovechkin_resume.png)
 
 ## References
 
