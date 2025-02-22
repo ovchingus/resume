@@ -18,7 +18,7 @@
         packages.default = pkgs.stdenvNoCC.mkDerivation {
           name = "vladimir_ovechkin_resume";
           src = self;
-          buildInputs = [ tex ];
+          buildInputs = [ tex pkgs.poppler_utils ];
           buildPhase = ''
             export PATH="${pkgs.lib.makeBinPath buildInputs}";
             mkdir -p .cache/texmf-var
@@ -29,6 +29,9 @@
           installPhase = ''
             mkdir -p $out
             cp resume.pdf $out/$name.pdf
+
+            # Convert the first page of the PDF to a PNG image
+            pdftoppm -png -f 1 -singlefile resume.pdf $out/$name
           '';
         };
       });
