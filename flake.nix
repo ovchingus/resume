@@ -15,10 +15,11 @@
         };
       in
       {
-        packages.default = pkgs.stdenvNoCC.mkDerivation {
+        packages.default = pkgs.stdenvNoCC.mkDerivation rec {
           name = "vladimir_ovechkin_resume";
           src = self;
-          buildInputs = [ tex pkgs.poppler_utils ];
+          phases = [ "unpackPhase" "buildPhase" "installPhase" ];
+          buildInputs = [ tex pkgs.coreutils pkgs.poppler_utils ];
           buildPhase = ''
             export PATH="${pkgs.lib.makeBinPath buildInputs}";
             mkdir -p .cache/texmf-var
