@@ -4,7 +4,9 @@ PDF Resume builder written with tex.
 
 ## How to build
 
-Build process requires `nix` and `nix-flakes` installed
+Generates 2 resume files:
+- `vladimir_ovechkin_resume_en.pdf` - English version
+- `vladimir_ovechkin_resume_ru.pdf` - Russian version
 
 ```sh
 # Run once to allow execute for build script
@@ -17,7 +19,3 @@ chmod +x build.sh
 ## Example
 
 ![Resume](./vladimir_ovechkin_resume.png)
-
-## References
-
-[Exploring Nix Flakes: Build LaTeX Documents Reproducibly](https://flyx.org/nix-flakes-latex/)
