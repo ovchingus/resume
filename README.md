@@ -1,6 +1,6 @@
 # Vladimir Ovechkin resume
 
-PDF Resume builder written with tex.
+PDF Resume builder written with LaTeX. PDF is generated using Docker container.
 
 ## How to build
 
@@ -18,4 +18,6 @@ chmod +x build.sh
 
 ## Example
 
-![Resume](./vladimir_ovechkin_resume.png)
+Here is how the resume looks like:
+
+![Resume](./vladimir_ovechkin_resume_en.png)
