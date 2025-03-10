@@ -6,6 +6,8 @@
 
 \documentclass[letterpaper,11pt]{article}
 
+\usepackage[utf8]{inputenc}
+\usepackage[T1,T2A]{fontenc}
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -15,19 +17,27 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage[english, russian]{babel}
+\usepackage[english,russian]{babel}
 \usepackage{tabularx}
-\usepackage{ifthen}
 \input{glyphtounicode}
 
-% Language selection (true for Russian, false for English)
-\newboolean{isRussian}
-\setboolean{isRussian}{false}  % Set to true for Russian version
+% Language selection mechanism
+\newif\ifrussian
 
-% Bilingual text command
-\newcommand{\bilingual}[2]{%
-  \ifthenelse{\boolean{isRussian}}{#2}{#1}%
+% Uncomment to use Russian
+% \russiantrue
+
+% Bilingual text command - shows only one language based on the flag
+\newcommand{\text}[2]{%
+  \ifrussian#2\else#1\fi%
 }
+
+% Set the main document language
+\ifrussian
+  \selectlanguage{russian}
+\else
+  \selectlanguage{english}
+\fi
 
 \pagestyle{fancy}
 \fancyhf{} % Clear all header and footer fields
@@ -58,9 +68,9 @@
 
 %-------------------------
 % Custom commands
-\newcommand{\resumeItem}[2]{
+\newcommand{\resumeItem}[1]{
   \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
+    {#1 \vspace{-2pt}}
   }
 }
 
@@ -103,35 +113,70 @@
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{mailto:me.vladimirovechkin@gmail.com}{\Large \bilingual{Vladimir Ovechkin}{Владимир Овечкин}}} & Email: \href{mailto:me.vladimirovechkin@gmail.com}{me.vladimirovechkin@gmail.com}\\
-  \href{https://www.linkedin.com/in/vladimir-ovechkin/}{linkedin.com/in/vladimir-ovechkin} & Mobile: \href{tel:+79956000615}{+7-995-600-06-15} \\
+  \textbf{\href{mailto:me.vladimirovechkin@gmail.com}{\Large \text{Vladimir Ovechkin}{Владимир Овечкин}}} & \text{Email}{Эл. почта}: \href{mailto:me.vladimirovechkin@gmail.com}{me.vladimirovechkin@gmail.com}\\
+  \href{https://www.linkedin.com/in/vladimir-ovechkin/}{linkedin.com/in/vladimir-ovechkin} & \text{Mobile}{Телефон}: \href{tel:+79956000615}{+7-995-600-06-15} \\
 \end{tabular*}
 
 
 %-----------EDUCATION-----------------
-\section{Education}
+\section{
+  \text
+  {Education}
+  {Образование}}
+
 \resumeSubHeadingListStart
 \resumeSubheading
-{Georgia Institute of Technology}{Atlanta, GA}
-{Master of Science in Computer Science; GPA: 4.00}{Aug 2012 -- Dec 2013}
-\resumeSubheading
-{Birla Institute of Technology and Science}{Pilani, India}
-{Bachelor of Engineering in Electrical and Electronics; GPA: 3.66 (9.15/10.0)}{Aug 2008 -- July 2012}
+{\text
+  {ITMO University}
+  {Университет ИТМО}}
+{\text
+  {St. Petersburg, Russia}
+  {Санкт-Петербург, Россия}}
+{\text
+  {Bachelor in Computer Science; GPA: 4.50 / 5.00}
+  {Бакалавр, Информационные системы и технологии; Оценка: 4.50 / 5.00}}
+{\text
+  {Sep 2017 -- Jun 2021}
+  {Сен. 2017 -- Июн. 2021}}
 \resumeSubHeadingListEnd
 
-
 %-----------EXPERIENCE-----------------
-\section{Experience}
-\resumeSubHeadingListStart
+\section
+ {\text
+  {Experience}
+  {Опыт работы}}
 
+\resumeSubHeadingListStart
 \resumeSubheading
-{Google}{Mountain View, CA}
-{Software Engineer}{Oct 2016 -- Present}
+{\text
+  {ecom.tech}
+  {ecom.tech}}
+{\text
+  {St. Petersburg, Russia}
+  {Санкт-Петербург, Россия}}
+{\text
+  {Frontend Developer}
+  {Frontend Developer}}
+{\text
+  {Aug 2022 -- Present}
+  {Авг. 2022 -- Настоящее время}}
 \resumeItemListStart
-\resumeItem{TensorFlow}
-{TensorFlow is an open source software library for numerical computation using data flow graphs; primarily used for training deep learning models. Worked on APIs and performance for training models on Tensor Processing Units (TPU).}
-\resumeItem{Apache Beam}
-{Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines, as well as a set of language-specific SDKs for constructing pipelines and runners.}
+\resumeItem
+{\text
+  {Led the end-to-end launch process for 2 web products within the client support domain of 1000+ unique users, overseeing all phases from inception to MVP release.}
+  {Руководил процессом запуска двух веб-продуктов в области поддержки клиентов, включая все этапы от концепции до выпуска MVP.}}
+\resumeItem
+{\text
+  {Provided supervision, leadership, and mentorship to a 3 new team members to achieve high performance and deliver MVP in time.}
+  {Руководил, руководил и наставничал 3 новых членами команды для достижения высокой производительности и выпуска MVP в срок.}}
+\resumeItem
+{\text
+  {Worked on Frontend stack set of JS technologies using Typescript, ES6/ESNext, ReactJS, GraphQL, Zustand, SASS, Jest, Webpack and Storybook in Agile/Scrum based project.}
+  {Работал над фронтендом на JS-технологиях, используя Typescript, ES6/ESNext, ReactJS, GraphQL, Zustand, SASS, Jest, Webpack и Storybook в Agile/Scrum-базируемом проекте.}}
+\resumeItem
+{\text
+  {Developed performant table rendering code that deals with large data sets to render components on UI and optimize calls to API both to minimize http requests and make parallel http calls to reduce loading latency by 100\%.}
+  {Разработал код рендеринга таблиц, который обрабатывает большие наборы данных для отображения компонентов на UI и оптимизирует вызовы API, минимизируя HTTP-запросы и делая параллельные HTTP-вызовы для сокращения задержки загрузки на 100\%.}}
 \resumeItemListEnd
 
 % --------Multiple Positions Heading------------
@@ -145,76 +190,111 @@
 %-------------------------------------------
 
 \resumeSubheading
-{Coursera}{Mountain View, CA}
-{Senior Software Engineer}{Jan 2014 -- Oct 2016}
+{\text
+  {Market Logic Software}
+  {Market Logic Software}}
+{\text
+  {Sofia, Bulgaria}
+  {София, Болгария}}
+{\text
+  {Senior Software Engineer}
+  {Старший разработчик}}
+{\text
+  {Jan 2014 -- Oct 2016}
+  {Янв. 2014 -- Окт. 2016}}
 \resumeItemListStart
-\resumeItem{Notifications}
-{Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing etc.}
-\resumeItem{Nostos}
-{Bulk data processing and injection service from Hadoop to Cassandra and provides a thin REST layer on top for serving offline computed data online.}
-\resumeItem{Workflows}
-{Dataduct an open source workflow framework to create and manage data pipelines leveraging reusables patterns to expedite developer productivity.}
-\resumeItem{Data Collection}
-{Designed the internal survey and crowdsourcing platform which allowed for creating various tasks for crowdsourcing or embedding surveys across the Coursera platform.}
-\resumeItem{Dev Environment}
-{Analytics environment based on Docker and AWS, standardized the Python and R dependencies. Wrote the core libraries that are shared by all data scientists.}
-\resumeItem{Data Warehousing}
-{Setup, schema design and management of Amazon Redshift. Built an internal app for access to the data using a web interface. Dataduct integration for daily ETL injection into Redshift.}
-\resumeItem{Recommendations}
-{Core service for all recommendation systems at Coursera, currently used on the homepage and throughout the content discovery process. Worked on both offline training and online serving.}
-\resumeItem{Content Discovery}
-{Improved content discovery by building a new onboarding experience on coursera. Used this to personalize the search and browse experience. Also worked on ranking and indexing improvements.}
-\resumeItem{Course Dashboards}
-{Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
+\resumeItem
+{\text
+  {Contributed to the development of 5 web platform micro-frontend modules utilizing TypeScript, React, and Redux within a collaborative team of 8 developers, serving a 100+ business customers worldwide.}
+  {Внес вклад в разработку 5 микро-фронтендов веб-платформы, используя TypeScript, React и Redux в команде из 8 разработчиков, обслуживающих 100+ клиентов в бизнесе.}}
+\resumeItem
+{\text
+  {Implemented comprehensive frontend code refactoring, resulting in a massive decrease in monthly new bug reports from 50 to 20 in average.}
+  {Реализовал комплексную рефакторизацию фронтенда, что привело к значительному сокращению ежемесячного количества новых багов с 50 до 20.}}
+\resumeItem
+{\text
+  {Identified and resolved performance and scalability issues, resulting in a 25\% speed-up in page load speed (FCP and bunch of other Lighthouse metrics) leads to increase in user engagement.}
+  {Определил и решил проблемы с производительностью и масштабируемостью, что привело к увеличению скорости загрузки страницы на 25\% (FCP и другие метрики Lighthouse) и увеличению пользовательской активности.}}
+\resumeItem
+{\text
+  {Implemented a frontend platform toolkit to optimize development processes, enhance code accuracy, and standardize the codebase, resulting in a significant reduction in development time and dev team satisfying rate.}
+  {Реализовал инструмент для оптимизации процессов разработки, повышения точности кода и стандартизации кода, что привело к значительному сокращению времени разработки и удовлетворенности команды разработчиков.}}
 \resumeItemListEnd
 
 \resumeSubheading
-{Lucena Research}{Atlanta, GA}
-{Data Scientist}{Summer 2012 and 2013}
+{\text
+  {Bimdata}
+  {Bimdata}}
+{\text
+  {St. Petersburg, Russia}
+  {Санкт-Петербург, Россия}}
+{\text
+  {Fullstack Software Engineer}
+  {Fullstack Software Engineer}}
+{\text
+  {Jan 2020 -- Aug 2022}
+  {Янв. 2020 -- Авг. 2022}}
 \resumeItemListStart
-\resumeItem{Portfolio Management}
-{Created models for portfolio hedging, portfolio optimization and price forecasting. Also created a strategy backtesting engine used for simulating and backtesting strategies.}
-\resumeItem{QuantDesk}
-{Python backend for a web application used by hedge fund managers for portfolio management.}
-\resumeItemListEnd
-
-\resumeSubheading
-{Georgia Institute of Technology}{Atlanta, GA}
-{Research and Teaching Assistant}{Jan 2012 -- Dec 2013}
-\resumeItemListStart
-\resumeItem{Research Assistant -- Machine Learning}
-{Research on machine learning for portfolio hedging and replication algorithms. Modeling low-risk \& continuous-return strategies. Developed the Python library QSTK.}
-\resumeItem{Teaching Assistant -- Computational Investing}
-{The online course on Coursera, had more than 100,000 students enrolled. It was featured on the 11 Alive News and the Atlanta Journal Constitution. Involved in creating assignment, exams and conducting recitation sessions. Also taught the on-campus version of the course.}
+\resumeItem
+{\text
+  {Development of a Software as a Service (SaaS) solution tailored for construction builders, achieving a valuation exceeding \$5 million.}
+  {Разработка программного обеспечения в виде услуги (SaaS) для строительных компаний, достигшего оценки в 5 млн. долларов.}}
+\resumeItem
+{\text
+  {Established Gitlab CI/CD pipelines for multiple products, ensuring efficient release management and publication processes, reducing release time cycles by 28\%.}
+  {Установил Gitlab CI/CD pipelines для нескольких продуктов, обеспечивая эффективное управление и публикацией процессов, сокращая циклы выпуска на 28\%.}}
+\resumeItem
+{\text
+  {Implemented a comprehensive reusable component library, leading to a notable 40\% decrease in development time.}
+  {Реализовал комплексный библиотеку повторно используемых компонентов, что привело к значительному сокращению времени разработки на 40\%.}}
+\resumeItem
+{\text
+  {Worked on a platform product team to implement micro-frontend architecture using Single-SPA to incorporate set of products into a unified cloud based application.}
+  {Работал над продуктовой командой для реализации микро-фронтенда, используя Single-SPA для интеграции набора продуктов в единое облачное приложение.}}
+\resumeItem
+{\text
+  {Provided project estimates, support escalations and production issues, deployed projects to internal and production environments and achieved 95\% delivery of features that met SLAs in time.}
+  {Обеспечил оценку проектов, подачу жалоб и проблемы в производстве, развертывание проектов в внутренних и производственных средах и достижение 95\% доставки функций, соответствующих SLAs в срок.}}
+\resumeItem
+{\text
+  {Integration of 3D model viewer to React application, used Three.js and Pixi.js to render 3D models.}
+  {Интеграция 3D-модельного просмотрщика в React-приложение, использование Three.js и Pixi.js для рендеринга 3D-моделей.}}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
-
 
 %-----------PROJECTS-----------------
-\section{Projects}
+% \section
+%  {\text
+%   {Projects}
+%   {Проекты}}
+
+% \resumeSubHeadingListStart
+% \resumeSubItem
+% {\text
+%   {QuantSoftware Toolkit}
+%   {QuantSoftware Toolkit} }
+% {\text
+%   {Open source Python library for financial data analysis and machine learning for finance.}
+%   {Открытый исходный код Python-библиотеки для финансовых данных и машинного обучения для финансов.}}
+% \resumeSubHeadingListEnd
+
+%--------SKILLS------------
+\section
+ {\text
+  {Skills}
+  {Навыки}}
 \resumeSubHeadingListStart
-\resumeSubItem{QuantSoftware Toolkit}
-{Open source Python library for financial data analysis and machine learning for finance.}
-\resumeSubItem{GitHub Visualization}
-{Data visualization of Git log data using D3 to analyze project trends over time.}
-\resumeSubItem{Recommendation System}
-{Music and movie recommender systems using collaborative filtering on public datasets.}
-\resumeSubItem{Mac Setup}
-{Book that gives step-by-step instructions on setting up developer environment on macOS.}
+\item
+      {\textbf
+            {\text
+              {Languages}
+              {Языки}}: Scala, Python, JavaScript, C++, SQL, Java
+            \hfill
+            \textbf
+            {\text
+              {Technologies}
+              {Технологии}}: AWS, Play, React, Kafka, GCE}
 \resumeSubHeadingListEnd
 
-%
-%--------SKILLS------------
-%\section{Skills}
-%  \resumeSubHeadingListStart
-%    \item{
-%      \textbf{Languages}{: Scala, Python, JavaScript, C++, SQL, Java}
-%      \hfill
-%      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
-%    }
-%  \resumeSubHeadingListEnd
-
-
-%-------------------------------------------
 \end{document}

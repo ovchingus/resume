@@ -9,10 +9,10 @@ cp resume.tex resume_en.tex
 cp resume.tex resume_ru.tex
 
 # Set language flag to false for English version
-sed -i '' 's/\\setboolean{isRussian}{.*}/\\setboolean{isRussian}{false}/' resume_en.tex
+sed -i '' 's/\\russiantrue/%\\russiantrue/' resume_en.tex
 
 # Set language flag to true for Russian version  
-sed -i '' 's/\\setboolean{isRussian}{.*}/\\setboolean{isRussian}{true}/' resume_ru.tex
+sed -i '' 's/% \\russiantrue/\\russiantrue/' resume_ru.tex
 
 # Generate English PDF
 docker run --rm -v "$(pwd)":/workspace -w /workspace latex-resume:latest pdflatex -jobname=vladimir_ovechkin_resume_en resume_en.tex

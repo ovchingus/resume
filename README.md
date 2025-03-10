@@ -21,3 +21,7 @@ chmod +x build.sh
 Here is how the resume looks like:
 
 ![Resume](./vladimir_ovechkin_resume_en.png)
+
+## Credits
+
+- [sb2nov](https://github.com/sb2nov) Thank you for the template!
