@@ -25,7 +25,7 @@
 \newif\ifrussian
 
 % Uncomment to use Russian
-% \russiantrue
+\russiantrue
 
 % Bilingual text command - shows only one language based on the flag
 \newcommand{\text}[2]{%
@@ -96,7 +96,11 @@
     \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\newcommand{\resumeSubItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+\vspace{-4pt}}
 
 \renewcommand{\labelitemii}{$\circ$}
 
@@ -149,34 +153,38 @@
 \resumeSubHeadingListStart
 \resumeSubheading
 {\text
-  {ecom.tech}
-  {ecom.tech}}
+  {Ecom.Tech}
+  {Ecom.Tech}}
 {\text
   {St. Petersburg, Russia}
   {Санкт-Петербург, Россия}}
 {\text
-  {Frontend Developer}
-  {Frontend Developer}}
+  {Senior Software Engineer}
+  {Старший разработчик}}
 {\text
   {Aug 2022 -- Present}
   {Авг. 2022 -- Настоящее время}}
 \resumeItemListStart
 \resumeItem
 {\text
-  {Led the end-to-end launch process for 2 web products within the client support domain of 1000+ unique users, overseeing all phases from inception to MVP release.}
-  {Руководил процессом запуска двух веб-продуктов в области поддержки клиентов, включая все этапы от концепции до выпуска MVP.}}
+  {Led the end-to-end launch process for 3 web products within the client support domain of more than 1000 unique users, overseeing all phases from inception to MVP release while consistently meeting aggressive deadlines.}
+  {Руководил процессом запуска 3х веб-приложений в области клиентской поддержки с более чем 1000 пользователей, включая все этапы от концепции до выпуска MVP, стабильно соблюдая жесткие сроки.}}
 \resumeItem
 {\text
   {Provided supervision, leadership, and mentorship to a 3 new team members to achieve high performance and deliver MVP in time.}
-  {Руководил, руководил и наставничал 3 новых членами команды для достижения высокой производительности и выпуска MVP в срок.}}
+  {Занимался наставничеством 3х новых членов команды для достижения высокой производительности и выпуска MVP в срок.}}
 \resumeItem
 {\text
   {Worked on Frontend stack set of JS technologies using Typescript, ES6/ESNext, ReactJS, GraphQL, Zustand, SASS, Jest, Webpack and Storybook in Agile/Scrum based project.}
-  {Работал над фронтендом на JS-технологиях, используя Typescript, ES6/ESNext, ReactJS, GraphQL, Zustand, SASS, Jest, Webpack и Storybook в Agile/Scrum-базируемом проекте.}}
+  {Работал над фронтендом на JS стеке, используя Typescript, ES6/ESNext, ReactJS, GraphQL, Zustand, SASS, Jest, Webpack и Storybook в Agile/Scrum проекте.}}
 \resumeItem
 {\text
-  {Developed performant table rendering code that deals with large data sets to render components on UI and optimize calls to API both to minimize http requests and make parallel http calls to reduce loading latency by 100\%.}
-  {Разработал код рендеринга таблиц, который обрабатывает большие наборы данных для отображения компонентов на UI и оптимизирует вызовы API, минимизируя HTTP-запросы и делая параллельные HTTP-вызовы для сокращения задержки загрузки на 100\%.}}
+  {Developed and implemented a solution for integrating GraphQL with REST API of third-party services using Node.js, that allowed to reduce the number of tasks of the backend team by 30\%.}
+  {Разработал и внедрил в компанию решение для интеграции GraphQL с REST API сторонних сервисов, на базе Node.js, что позволило сократить количество задач команды бекенда на 30\%.}}
+\resumeItem
+{\text
+  {Developed and implemented a solution for rendering tables in the company using virtualization and an optimal way to load data from graphql, which improved performance and reduced page load time by up to 50\% for 3 applications.}
+  {Разработал и внедрил в компанию решение для рендеринга таблиц, используя виртуализацию и оптимальный способ загрузки данных с graphql, что улучшило производительность и уменьшило время загрузки страниц до 50\% для 3х приложений.}}
 \resumeItemListEnd
 
 % --------Multiple Positions Heading------------
@@ -197,11 +205,11 @@
   {Sofia, Bulgaria}
   {София, Болгария}}
 {\text
-  {Senior Software Engineer}
-  {Старший разработчик}}
+  {Software Engineer}
+  {Разработчик}}
 {\text
-  {Jan 2014 -- Oct 2016}
-  {Янв. 2014 -- Окт. 2016}}
+  {Jul 2021 -- Aug 2022}
+  {Июль 2021 -- Авг. 2022}}
 \resumeItemListStart
 \resumeItem
 {\text
@@ -210,15 +218,15 @@
 \resumeItem
 {\text
   {Implemented comprehensive frontend code refactoring, resulting in a massive decrease in monthly new bug reports from 50 to 20 in average.}
-  {Реализовал комплексную рефакторизацию фронтенда, что привело к значительному сокращению ежемесячного количества новых багов с 50 до 20.}}
+  {Реализовал комплексный рефакторинг фронтенда, что привело к значительному сокращению ежемесячного количества новых багов с 50 до 20.}}
 \resumeItem
 {\text
-  {Identified and resolved performance and scalability issues, resulting in a 25\% speed-up in page load speed (FCP and bunch of other Lighthouse metrics) leads to increase in user engagement.}
-  {Определил и решил проблемы с производительностью и масштабируемостью, что привело к увеличению скорости загрузки страницы на 25\% (FCP и другие метрики Lighthouse) и увеличению пользовательской активности.}}
+  {Identified and resolved micro-frontend redundant dependencies issue, resulting up to 25\% speed-up in page load speed (TTI and bunch of other Lighthouse metrics) leads to increase in user engagement.}
+  {Определил и устранил проблему лишних зависимостей в микро-фронтендах, что привело к росту скорости загрузки страницы до 25\% (TTI + метрики Lighthouse) и увеличению пользовательской вовлеченности.}}
 \resumeItem
 {\text
   {Implemented a frontend platform toolkit to optimize development processes, enhance code accuracy, and standardize the codebase, resulting in a significant reduction in development time and dev team satisfying rate.}
-  {Реализовал инструмент для оптимизации процессов разработки, повышения точности кода и стандартизации кода, что привело к значительному сокращению времени разработки и удовлетворенности команды разработчиков.}}
+  {Реализовал инструмент для оптимизации процессов разработки и повышения стандартизации кода, что привело к значительному сокращению времени разработки и росту удовлетворенности разработчиков.}}
 \resumeItemListEnd
 
 \resumeSubheading
@@ -230,54 +238,61 @@
   {Санкт-Петербург, Россия}}
 {\text
   {Fullstack Software Engineer}
-  {Fullstack Software Engineer}}
+  {Fullstack разработчик}}
 {\text
-  {Jan 2020 -- Aug 2022}
-  {Янв. 2020 -- Авг. 2022}}
+  {May 2019 -- Jul 2021}
+  {Май 2019 -- Июль 2021}}
 \resumeItemListStart
 \resumeItem
 {\text
-  {Development of a Software as a Service (SaaS) solution tailored for construction builders, achieving a valuation exceeding \$5 million.}
-  {Разработка программного обеспечения в виде услуги (SaaS) для строительных компаний, достигшего оценки в 5 млн. долларов.}}
+  {Development of a Software as a Service (SaaS) solution tailored for construction builders, achieving a valuation exceeding \$1 million.}
+  {Разработка программного обеспечения в виде услуги (SaaS) для строительных компаний, достигшего оценки в 1 млн. долларов.}}
 \resumeItem
 {\text
-  {Established Gitlab CI/CD pipelines for multiple products, ensuring efficient release management and publication processes, reducing release time cycles by 28\%.}
-  {Установил Gitlab CI/CD pipelines для нескольких продуктов, обеспечивая эффективное управление и публикацией процессов, сокращая циклы выпуска на 28\%.}}
+  {Established Gitlab CI/CD pipelines for multiple products, ensuring efficient release management and publication processes, reducing time to production.}
+  {Установил Gitlab CI/CD пайплайны для нескольких продуктов, что обеспечло эффективное управление релизами, сокращая время до выпуска на продакшен и количество багов.}}
 \resumeItem
 {\text
-  {Implemented a comprehensive reusable component library, leading to a notable 40\% decrease in development time.}
-  {Реализовал комплексный библиотеку повторно используемых компонентов, что привело к значительному сокращению времени разработки на 40\%.}}
+  {Implemented a comprehensive reusable component library, leading to a notable decrease in development time and reduced the number of bugs by 40\%.}
+  {Реализовал комплексную библиотеку повторно переиспользуемых компонентов, что привело к значительному сокращению времени разработки и сократило количество багов до 40\%.}}
 \resumeItem
 {\text
-  {Worked on a platform product team to implement micro-frontend architecture using Single-SPA to incorporate set of products into a unified cloud based application.}
-  {Работал над продуктовой командой для реализации микро-фронтенда, используя Single-SPA для интеграции набора продуктов в единое облачное приложение.}}
+  {Worked on a product's architecture to implement micro-frontend practices using Single-SPA to incorporate set of products into a unified cloud based application.}
+  {Работал над архитектурой продукта для реализации микро-фронтенд подхода, используя Single-SPA для интеграции набора продуктов в единое облачное приложение.}}
 \resumeItem
 {\text
-  {Provided project estimates, support escalations and production issues, deployed projects to internal and production environments and achieved 95\% delivery of features that met SLAs in time.}
-  {Обеспечил оценку проектов, подачу жалоб и проблемы в производстве, развертывание проектов в внутренних и производственных средах и достижение 95\% доставки функций, соответствующих SLAs в срок.}}
+  {Provided task estimates, testing, reviews and production issue fixes, deployed projects to internal and production environments and achieved 95\% delivery of features that met SLAs in time.}
+  {Обеспечивал оценку задач, тестирование, ревью кода и исправление багов. Занимался развертыванием проектов в тестовых и продовых окружениях, достигая 95\% доставки фич, соответствующих SLAs в срок.}}
 \resumeItem
 {\text
-  {Integration of 3D model viewer to React application, used Three.js and Pixi.js to render 3D models.}
-  {Интеграция 3D-модельного просмотрщика в React-приложение, использование Three.js и Pixi.js для рендеринга 3D-моделей.}}
+  {Integrated 3D model viewer to React application, used Three.js and Pixi.js to render 3D models.}
+  {Интегрировал инструмент для просмотра 3D-моделей в React-приложение, используя Three.js и Pixi.js для рендеринга.}}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------------
-% \section
-%  {\text
-%   {Projects}
-%   {Проекты}}
+\section
+ {\text
+  {Projects}
+  {Проекты}}
 
-% \resumeSubHeadingListStart
-% \resumeSubItem
-% {\text
-%   {QuantSoftware Toolkit}
-%   {QuantSoftware Toolkit} }
-% {\text
-%   {Open source Python library for financial data analysis and machine learning for finance.}
-%   {Открытый исходный код Python-библиотеки для финансовых данных и машинного обучения для финансов.}}
-% \resumeSubHeadingListEnd
+\resumeSubHeadingListStart
+\resumeSubItem
+{\text
+  {Eyelash Sofle keyboard}
+  {Eyelash Sofle keyboard}}
+{\text
+  {Open source ergonomic keyboard with split design and customizable layout. Built with KiCad for pcb design and OpenScad for 3D printing case.}
+  {Открытый исходный код эргономичной сплит клавиатуры с настраиваемой раскладкой. Разработан с использованием KiCad для дизайна печатных плат и OpenScad для 3D-печати корпуса.}}
+\resumeSubItem
+{\text
+  {Pdfjs-custom-canvas}
+  {Pdfjs-custom-canvas}}
+{\text
+  {Customized pdf.js library canvas wrapper for rendering pdf documents with custom styles and annotations.}
+  {Кастомизированная обертка canvas библиотеки pdf.js для рендеринга pdf-документов с пользовательскими стилями и аннотациями.}}
+\resumeSubHeadingListEnd
 
 %--------SKILLS------------
 \section
@@ -285,16 +300,16 @@
   {Skills}
   {Навыки}}
 \resumeSubHeadingListStart
-\item
-      {\textbf
-            {\text
-              {Languages}
-              {Языки}}: Scala, Python, JavaScript, C++, SQL, Java
-            \hfill
-            \textbf
-            {\text
-              {Technologies}
-              {Технологии}}: AWS, Play, React, Kafka, GCE}
+\resumeSubItem
+{\text
+  {Languages}
+  {Языки}}
+{Python, JavaScript, TypeScript, SQL, Java}
+\resumeSubItem
+{\text
+  {Technologies}
+  {Технологии}}
+{HTML, CSS/Sass, React, Redux, Next.js, Tailwind CSS, Node.js, Express, PostgreSQL, MongoDB, Git, Docker, Kubernetes}
 \resumeSubHeadingListEnd
 
 \end{document}
