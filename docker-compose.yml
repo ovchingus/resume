@@ -1,0 +1,8 @@
+version: "3"
+services:
+  latex-watcher:
+    build: .
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    command: bash /workspace/watch.sh

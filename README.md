@@ -2,6 +2,14 @@
 
 PDF Resume builder written with LaTeX. PDF is generated using Docker container.
 
+## How to update on change
+
+To automatically rebuild the resume when changes are made, use Docker Compose:
+
+```sh
+docker-compose up 
+```
+
 ## How to build
 
 Generates 2 resume files:
